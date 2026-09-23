@@ -1,0 +1,323 @@
+/* ================================
+   Global
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+
+    line-height: 1.7;
+    color: #222;
+    background-color: #ffffff;
+}
+
+
+/* ================================
+   Header / Navigation
+================================ */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e5e5e5;
+
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 18px 30px;
+    gap: 30px;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #0066cc;
+}
+
+
+/* ================================
+   Main
+================================ */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+
+/* ================================
+   Hero
+================================ */
+
+#hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 100px 0;
+}
+
+#hero h1 {
+    font-size: clamp(42px, 7vw, 64px);
+    line-height: 1.1;
+
+    color: #111;
+    margin-bottom: 20px;
+}
+
+#hero p:first-of-type {
+    font-size: 22px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+#hero p:last-of-type {
+    font-size: 17px;
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+#hero > a {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 9px 20px;
+
+    color: white;
+    background-color: #222;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 15px;
+
+    transition: all 0.2s ease;
+}
+
+#hero > a:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Sections
+================================ */
+
+section {
+    padding: 80px 0;
+
+    border-top: 1px solid #eeeeee;
+}
+
+section h2 {
+    font-size: 30px;
+    color: #111;
+
+    margin-bottom: 25px;
+}
+
+section p {
+    color: #555;
+    font-size: 16px;
+}
+
+
+/* ================================
+   About
+================================ */
+
+#about p {
+    max-width: 750px;
+}
+
+
+/* ================================
+   Research Interests
+================================ */
+
+#research ul {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+#research li {
+    padding: 18px 20px;
+
+    background-color: #f7f7f7;
+
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+
+    color: #333;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+#research li:hover {
+    border-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   Projects
+================================ */
+
+#projects article {
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+
+    transition: all 0.2s ease;
+}
+
+#projects article:hover {
+    border-color: #ccc;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transform: translateY(-3px);
+}
+
+#projects h3 {
+    font-size: 20px;
+    color: #222;
+
+    margin-bottom: 10px;
+}
+
+#projects article p {
+    margin-bottom: 15px;
+}
+
+#projects article a {
+    color: #0066cc;
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+#projects article a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   Notes
+================================ */
+
+#notes p {
+    max-width: 700px;
+}
+
+
+/* ================================
+   Contact
+================================ */
+
+#contact {
+    padding-bottom: 100px;
+}
+
+#contact p {
+    color: #444;
+}
+
+
+/* ================================
+   Responsive Design
+================================ */
+
+@media (max-width: 700px) {
+
+    main {
+        padding: 0 20px;
+    }
+
+    nav {
+        justify-content: center;
+
+        padding: 15px 10px;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    #hero {
+        min-height: 65vh;
+        padding: 70px 0;
+    }
+
+    #hero h1 {
+        font-size: 42px;
+    }
+
+    #hero p:first-of-type {
+        font-size: 19px;
+    }
+
+    #hero p:last-of-type {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    #research ul {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,6 +1,6 @@
-/* ================================
-   Global
-================================ */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -13,45 +13,53 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    line-height: 1.7;
     color: #222;
-    background-color: #ffffff;
+    background: #ffffff;
+    line-height: 1.7;
 }
 
 
-/* ================================
-   Header / Navigation
-================================ */
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 
-    background-color: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #e5e5e5;
+    background: rgba(255, 255, 255, 0.95);
+
+    border-bottom: 1px solid #eeeeee;
 
     backdrop-filter: blur(10px);
 }
 
 nav {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
 
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    gap: 30px;
 
     padding: 18px 30px;
-    gap: 30px;
 }
 
 nav a {
-    color: #444;
+    color: #555;
+
     text-decoration: none;
+
     font-size: 15px;
     font-weight: 500;
 
@@ -63,23 +71,25 @@ nav a:hover {
 }
 
 
-/* ================================
-   Main
-================================ */
+/* =========================
+   MAIN
+========================= */
 
 main {
     max-width: 900px;
-    margin: 0 auto;
+
+    margin: auto;
+
     padding: 0 30px;
 }
 
 
-/* ================================
-   Hero
-================================ */
+/* =========================
+   HERO
+========================= */
 
 #hero {
-    min-height: 75vh;
+    min-height: 80vh;
 
     display: flex;
     flex-direction: column;
@@ -88,189 +98,296 @@ main {
     padding: 100px 0;
 }
 
-#hero h1 {
-    font-size: clamp(42px, 7vw, 64px);
-    line-height: 1.1;
+.hero-label {
+    color: #0066cc;
 
-    color: #111;
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
     margin-bottom: 20px;
 }
 
-#hero p:first-of-type {
-    font-size: 22px;
-    color: #444;
-    margin-bottom: 8px;
+#hero h1 {
+    font-size: clamp(48px, 8vw, 72px);
+
+    line-height: 1.05;
+
+    color: #111;
+
+    margin-bottom: 25px;
 }
 
-#hero p:last-of-type {
-    font-size: 17px;
-    color: #777;
+.hero-description {
+    max-width: 650px;
+
+    color: #666;
+
+    font-size: 20px;
 
     margin-bottom: 30px;
 }
 
-#hero > a {
-    display: inline-block;
+.hero-links {
+    display: flex;
+    gap: 15px;
+}
 
-    width: fit-content;
-
-    padding: 9px 20px;
-
-    color: white;
-    background-color: #222;
+.hero-links a {
+    padding: 10px 18px;
 
     border-radius: 6px;
 
     text-decoration: none;
+
     font-size: 15px;
-
-    transition: all 0.2s ease;
 }
 
-#hero > a:hover {
-    background-color: #0066cc;
-    transform: translateY(-2px);
+.hero-links a:first-child {
+    color: white;
+
+    background: #222;
+}
+
+.hero-links a:first-child:hover {
+    background: #0066cc;
+}
+
+.hero-links a:last-child {
+    color: #333;
+
+    border: 1px solid #ddd;
+}
+
+.hero-links a:last-child:hover {
+    border-color: #999;
 }
 
 
-/* ================================
-   Sections
-================================ */
+/* =========================
+   SECTIONS
+========================= */
 
 section {
-    padding: 80px 0;
+    padding: 90px 0;
 
     border-top: 1px solid #eeeeee;
 }
 
 section h2 {
     font-size: 30px;
+
     color: #111;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 section p {
     color: #555;
+
     font-size: 16px;
 }
 
 
-/* ================================
-   About
-================================ */
+/* =========================
+   ABOUT
+========================= */
 
 #about p {
     max-width: 750px;
+
+    margin-bottom: 18px;
 }
 
 
-/* ================================
-   Research Interests
-================================ */
+/* =========================
+   RESEARCH
+========================= */
 
-#research ul {
-    list-style: none;
-
+.research-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 15px;
-
-    margin-top: 25px;
+    gap: 18px;
 }
 
-#research li {
-    padding: 18px 20px;
-
-    background-color: #f7f7f7;
-
-    border: 1px solid #e8e8e8;
-    border-radius: 8px;
-
-    color: #333;
-    font-weight: 500;
-
-    transition: all 0.2s ease;
-}
-
-#research li:hover {
-    border-color: #0066cc;
-    transform: translateY(-2px);
-}
-
-
-/* ================================
-   Projects
-================================ */
-
-#projects article {
+.research-item {
     padding: 25px;
 
-    margin-bottom: 20px;
+    background: #fafafa;
 
-    border: 1px solid #e5e5e5;
+    border: 1px solid #e8e8e8;
+
     border-radius: 10px;
 
     transition: all 0.2s ease;
 }
 
-#projects article:hover {
+.research-item:hover {
     border-color: #ccc;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 
     transform: translateY(-3px);
 }
 
-#projects h3 {
-    font-size: 20px;
+.research-item h3 {
     color: #222;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.research-item p {
+    font-size: 15px;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-card {
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: #ccc;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transform: translateY(-3px);
+}
+
+.project-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
 
     margin-bottom: 10px;
 }
 
-#projects article p {
+.project-header h3 {
+    font-size: 20px;
+
+    color: #222;
+}
+
+.project-header span {
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    background: #f0f0f0;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+.project-card p {
     margin-bottom: 15px;
 }
 
-#projects article a {
+.project-card a {
     color: #0066cc;
+
     text-decoration: none;
 
     font-weight: 500;
 }
 
-#projects article a:hover {
+.project-card a:hover {
     text-decoration: underline;
 }
 
 
-/* ================================
-   Notes
-================================ */
+/* =========================
+   NOTES
+========================= */
 
-#notes p {
-    max-width: 700px;
+.notes-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.notes-list a {
+    color: #0066cc;
+
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+.notes-list a:hover {
+    text-decoration: underline;
 }
 
 
-/* ================================
-   Contact
-================================ */
+/* =========================
+   CONTACT
+========================= */
 
-#contact {
-    padding-bottom: 100px;
+.contact-links {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 20px;
 }
 
-#contact p {
-    color: #444;
+.contact-links a {
+    color: #0066cc;
+
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
 }
 
 
-/* ================================
-   Responsive Design
-================================ */
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-top: 1px solid #eeeeee;
+}
+
+footer p {
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -281,43 +398,58 @@ section p {
     nav {
         justify-content: center;
 
-        padding: 15px 10px;
-
         gap: 18px;
 
-        flex-wrap: wrap;
+        padding: 15px 10px;
     }
 
     nav a {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     #hero {
-        min-height: 65vh;
+        min-height: 70vh;
+
         padding: 70px 0;
     }
 
     #hero h1 {
-        font-size: 42px;
+        font-size: 48px;
     }
 
-    #hero p:first-of-type {
-        font-size: 19px;
-    }
-
-    #hero p:last-of-type {
-        font-size: 16px;
+    .hero-description {
+        font-size: 18px;
     }
 
     section {
-        padding: 60px 0;
+        padding: 65px 0;
     }
 
     section h2 {
         font-size: 26px;
     }
 
-    #research ul {
+    .research-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .hero-links {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .contact-links {
+        flex-direction: column;
+
+        gap: 10px;
     }
 }
